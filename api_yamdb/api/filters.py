@@ -1,7 +1,6 @@
 import requests
 from rest_framework import filters
-
-from reviews.models import Genre, Category, Title
+from reviews.models import Category, Genre, Title
 
 
 class TitleFilterBackend(filters.BaseFilterBackend):

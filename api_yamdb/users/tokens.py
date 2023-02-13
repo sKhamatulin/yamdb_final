@@ -4,7 +4,6 @@ from typing import Dict
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.utils import six
 from rest_framework_simplejwt.tokens import RefreshToken
-
 from users.models import User
 
 

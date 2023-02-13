@@ -1,7 +1,7 @@
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-
 from users.models import User
+
 from .validators import year_validator
 
 LINE_SLICE = 20

@@ -1,16 +1,16 @@
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404
-from rest_framework import status, generics, filters
+from rest_framework import filters, generics, status
 from rest_framework.decorators import api_view
 from rest_framework.exceptions import MethodNotAllowed
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from .models import User
-from .permissions import (IsAdminOrSuperUserList, IsAdminOrSuperUser)
-from .serializers import (SignUpSerializer, GetTokenSerializer, UserSerializer,
-                          UserPatchSerializer)
-from .tokens import get_tokens_for_user, account_activation_token
+from .permissions import IsAdminOrSuperUser, IsAdminOrSuperUserList
+from .serializers import (GetTokenSerializer, SignUpSerializer,
+                          UserPatchSerializer, UserSerializer)
+from .tokens import account_activation_token, get_tokens_for_user
 
 
 class UserList(generics.ListCreateAPIView):
