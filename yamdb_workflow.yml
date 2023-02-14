@@ -1,4 +1,4 @@
-name: Django-app workflow
+name: api_yamdb workflow
 
 on: [push]
 
@@ -11,7 +11,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
-      with: python-version: 3.7
+      with: 
+        python-version: 3.7
 
     - name: Install dependencies
       run: |
@@ -41,7 +42,8 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
-          tags: skhamatulin/infra_actions:latest
+          tags: skhamatulin/api_yamdb
+          file: api_yamdb/Dockerfile
   #3
   deploy:
     runs-on: ubuntu-latest
